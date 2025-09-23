@@ -1,5 +1,5 @@
 pkgname=axinstall
-pkgver=1.11
+pkgver=1.12
 pkgrel=5
 pkgdesc="AxOS installer"
 arch=('x86_64')
