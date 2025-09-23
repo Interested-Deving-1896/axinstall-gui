@@ -3,4 +3,5 @@ desktops = [
     "Calla",
     "Plasma",
     "Theom",
+    "None",
 ]
