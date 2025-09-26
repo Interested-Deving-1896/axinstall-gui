@@ -26,6 +26,7 @@ class InstallPrefs:
     def __init__(
         self,
         timezone,
+        mirrors,
         locale,
         layout,
         variant,
@@ -47,6 +48,7 @@ class InstallPrefs:
         partitions,
     ):
         self.timezone = timezone
+        self.mirrors = mirrors
         self.locale = locale
         self.layout = layout
         self.variant = variant
@@ -89,6 +91,9 @@ class InstallPrefs:
                 "locale": self.locale,
                 "keymap": self.layout.country_shorthand,
                 "timezone": self.timezone.region + "/" + self.timezone.location,
+            },
+            "mirrors": {
+              "region": self.mirrors,
             },
             "networking": {"hostname": self.hostname, "ipv6": False},
             "swap": int(self.swap_value),

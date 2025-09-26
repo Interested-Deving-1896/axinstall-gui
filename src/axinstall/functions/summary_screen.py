@@ -220,6 +220,7 @@ class SummaryScreen(AxinstallScreen, Adw.Bin):
 
         self.installprefs = InstallPrefs(
             timezone=self.window.timezone_screen.chosen_timezone,
+            mirrors=self.window.timezone_screen.guessed_country,
             locale=self.window.locale_screen.chosen_locales,
             layout=self.window.keyboard_screen.variant,
             variant=self.window.keyboard_screen.variant,

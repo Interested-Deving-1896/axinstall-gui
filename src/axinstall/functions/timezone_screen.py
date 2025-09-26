@@ -50,6 +50,7 @@ class TimezoneScreen(AxinstallScreen, Adw.Bin):
     chosen_timezone = None
     move_to_summary = False
     guessed_timezone = None
+    guessed_country = None
 
     def __init__(self, window, locations, set_valid, application, **kwargs):
         super().__init__(set_valid=set_valid, **kwargs)
@@ -121,8 +122,9 @@ class TimezoneScreen(AxinstallScreen, Adw.Bin):
         print("guessing your timezone")
 
         try:
-            r = requests.get("https://geoip.kde.org/v1/calamares")
-            self.guessed_timezone = r.json()["time_zone"]
+            r = requests.get("http://ip-api.com/json")
+            self.guessed_timezone = r.json()["timezone"]
+            self.guessed_country = r.json()["country"]
 
             split = self.guessed_timezone.split("/")
 
@@ -139,6 +141,7 @@ class TimezoneScreen(AxinstallScreen, Adw.Bin):
                     )
 
                     print(f'Guessed timezone as "{self.guessed_timezone}"!')
+                    print(f'{self.guessed_country} will be used for mirrors.')
                     break
         except Exception as e:
             print("Failed to detect IP timezone!", e)
