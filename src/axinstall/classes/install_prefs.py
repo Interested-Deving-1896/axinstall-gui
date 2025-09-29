@@ -46,6 +46,7 @@ class InstallPrefs:
         kernel,
         partition_mode,
         partitions,
+        offline_install,
     ):
         self.timezone = timezone
         self.mirrors = mirrors
@@ -74,6 +75,7 @@ class InstallPrefs:
         self.is_efi = disks.get_uefi()
         self.bootloader_type = "grub-efi" if self.is_efi else "grub-legacy"
         self.bootloader_location = "/boot/efi/" if self.is_efi else self.disk
+        self.offline_install = offline_install
 
     def generate_json(self):
         prefs = {
@@ -116,5 +118,6 @@ class InstallPrefs:
             "office_uk": self.office_uk_enabled,
             "entertainment_uk": self.entertainment_uk_enabled,
             "flatpak": False,
+            "offline": self.offline_install,
         }
         return json.dumps(prefs)

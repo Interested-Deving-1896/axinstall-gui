@@ -5,118 +5,139 @@
     <property name="hexpand">true</property>
     <property name="vexpand">true</property>
     <child>
-      <object class="GtkBox">
-        <property name="vexpand">true</property>
+      <object class="GtkScrolledWindow">
         <property name="hexpand">true</property>
-        <property name="orientation">vertical</property>
+        <property name="vexpand">true</property>
+        <property name="hscrollbar-policy">never</property>
         <child>
-          <object class="AdwStatusPage">
-            <property name="hexpand">true</property>
+          <object class="GtkBox">
             <property name="vexpand">true</property>
-            <property name="title" translatable="true">Miscellaneous</property>
-            <property name="css-classes">axinstall_compact</property>
+            <property name="hexpand">true</property>
+            <property name="orientation">vertical</property>
             <child>
-              <object class="AdwPreferencesPage">
+              <object class="AdwStatusPage">
+                <property name="hexpand">true</property>
+                <property name="vexpand">true</property>
+                <property name="title" translatable="true">Miscellaneous</property>
+                <property name="css-classes">axinstall_compact</property>
                 <child>
-                  <object class="AdwPreferencesGroup">
+                  <object class="AdwPreferencesPage">
                     <child>
-                      <object class="AdwEntryRow" id="hostname_entry">
-                        <property name="title" translatable="true">Custom Hostname</property>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkListBox">
-                        <property name="margin-top">7</property>
-                        <style>
-                          <class name="boxed-list"/>
-                        </style>
+                      <object class="AdwPreferencesGroup">
                         <child>
-                          <object class="AdwActionRow">
-                            <property name="activatable">false</property>
-                            <property name="selectable">false</property>
-                            <property name="title" translatable="true">Install NVIDIA drivers</property>
-                            <property name="subtitle" translatable="true">Enable this only if you have a NVidia GPU</property>
-                            <child>
-                              <object class="GtkSwitch" id="nvidia_switch">
-                                <property name="valign">center</property>
-                                <property name="active">false</property>
-                              </object>
-                            </child>
+                          <object class="AdwEntryRow" id="hostname_entry">
+                            <property name="title" translatable="true">Custom Hostname</property>
                           </object>
                         </child>
                         <child>
-                          <object class="AdwActionRow">
-                            <property name="activatable">false</property>
-                            <property name="selectable">false</property>
-                            <property name="title" translatable="true">Install artist user kit</property>
-                            <property name="subtitle" translatable="true">Enable to install apps for artists</property>
+                          <object class="GtkListBox">
+                            <property name="margin-top">7</property>
+                            <style>
+                              <class name="boxed-list"/>
+                            </style>
                             <child>
-                              <object class="GtkSwitch" id="artist_uk_switch">
-                                <property name="valign">center</property>
-                                <property name="active">false</property>
+                              <object class="AdwActionRow">
+                                <property name="activatable">false</property>
+                                <property name="selectable">false</property>
+                                <property name="title" translatable="true">Offline install</property>
+                                <property name="subtitle" translatable="true">Enable this if you want a local installation (not recommended)</property>
+                                <child>
+                                  <object class="GtkSwitch" id="offline_install_switch">
+                                    <property name="valign">center</property>
+                                    <property name="active">false</property>
+                                  </object>
+                                </child>
                               </object>
                             </child>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="AdwActionRow">
-                            <property name="activatable">false</property>
-                            <property name="selectable">false</property>
-                            <property name="title" translatable="true">Install developer user kit</property>
-                            <property name="subtitle" translatable="true">Enable to install development apps</property>
                             <child>
-                              <object class="GtkSwitch" id="devel_uk_switch">
-                                <property name="valign">center</property>
-                                <property name="active">false</property>
+                              <object class="AdwActionRow">
+                                <property name="activatable">false</property>
+                                <property name="selectable">false</property>
+                                <property name="title" translatable="true">Install NVIDIA drivers</property>
+                                <property name="subtitle" translatable="true">Enable this only if you have a NVidia GPU</property>
+                                <child>
+                                  <object class="GtkSwitch" id="nvidia_switch">
+                                    <property name="valign">center</property>
+                                    <property name="active">false</property>
+                                  </object>
+                                </child>
                               </object>
                             </child>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="AdwActionRow">
-                            <property name="activatable">false</property>
-                            <property name="selectable">false</property>
-                            <property name="title" translatable="true">Install hacker package kit</property>
-                            <property name="subtitle" translatable="true">Enable to install pentesting tools</property>
                             <child>
-                              <object class="GtkSwitch" id="hacker_uk_switch">
-                                <property name="valign">center</property>
-                                <property name="active">false</property>
+                              <object class="AdwActionRow">
+                                <property name="activatable">false</property>
+                                <property name="selectable">false</property>
+                                <property name="title" translatable="true">Install artist user kit</property>
+                                <property name="subtitle" translatable="true">Enable to install apps for artists</property>
+                                <child>
+                                  <object class="GtkSwitch" id="artist_uk_switch">
+                                    <property name="valign">center</property>
+                                    <property name="active">false</property>
+                                  </object>
+                                </child>
                               </object>
                             </child>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="AdwActionRow">
-                            <property name="activatable">false</property>
-                            <property name="selectable">false</property>
-                            <property name="title" translatable="true">Install Office user kit</property>
-                            <property name="subtitle" translatable="true">Enable to install office apps</property>
                             <child>
-                              <object class="GtkSwitch" id="office_uk_switch">
-                                <property name="valign">center</property>
-                                <property name="active">false</property>
+                              <object class="AdwActionRow">
+                                <property name="activatable">false</property>
+                                <property name="selectable">false</property>
+                                <property name="title" translatable="true">Install developer user kit</property>
+                                <property name="subtitle" translatable="true">Enable to install development apps</property>
+                                <child>
+                                  <object class="GtkSwitch" id="devel_uk_switch">
+                                    <property name="valign">center</property>
+                                    <property name="active">false</property>
+                                  </object>
+                                </child>
                               </object>
                             </child>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="AdwActionRow">
-                            <property name="activatable">false</property>
-                            <property name="selectable">false</property>
-                            <property name="title" translatable="true">Install entertainment user kit</property>
-                            <property name="subtitle" translatable="true">Enable to install entertainment apps such as media players</property>
                             <child>
-                              <object class="GtkSwitch" id="entertainment_uk_switch">
-                                <property name="valign">center</property>
-                                <property name="active">false</property>
+                              <object class="AdwActionRow">
+                                <property name="activatable">false</property>
+                                <property name="selectable">false</property>
+                                <property name="title" translatable="true">Install hacker package kit</property>
+                                <property name="subtitle" translatable="true">Enable to install pentesting tools</property>
+                                <child>
+                                  <object class="GtkSwitch" id="hacker_uk_switch">
+                                    <property name="valign">center</property>
+                                    <property name="active">false</property>
+                                  </object>
+                                </child>
                               </object>
                             </child>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="AdwEntryRow" id="swap_entry">
-                            <property name="title" translatable="true">Swap size (MiB). Default = 0</property>
+                            <child>
+                              <object class="AdwActionRow">
+                                <property name="activatable">false</property>
+                                <property name="selectable">false</property>
+                                <property name="title" translatable="true">Install Office user kit</property>
+                                <property name="subtitle" translatable="true">Enable to install office apps</property>
+                                <child>
+                                  <object class="GtkSwitch" id="office_uk_switch">
+                                    <property name="valign">center</property>
+                                    <property name="active">false</property>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="AdwActionRow">
+                                <property name="activatable">false</property>
+                                <property name="selectable">false</property>
+                                <property name="title" translatable="true">Install entertainment user kit</property>
+                                <property name="subtitle" translatable="true">Enable to install entertainment apps such as media players</property>
+                                <child>
+                                  <object class="GtkSwitch" id="entertainment_uk_switch">
+                                    <property name="valign">center</property>
+                                    <property name="active">false</property>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="AdwEntryRow" id="swap_entry">
+                                <property name="title" translatable="true">Swap size (MiB). Default = 0</property>
+                              </object>
+                            </child>
                           </object>
                         </child>
                       </object>

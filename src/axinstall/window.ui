@@ -25,7 +25,7 @@
   <template class="AxinstallWindow" parent="GtkApplicationWindow">
     <property name="title">Axinstall</property>
     <property name="default-width">650</property>
-    <property name="default-height">700</property>
+    <property name="default-height">800</property>
     <!-- property name="resizable">false</-property-->
     <child type="titlebar">
       <object class="AdwHeaderBar" id="header_bar">

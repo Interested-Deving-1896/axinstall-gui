@@ -338,6 +338,18 @@
                             </child>
                           </object>
                         </child>
+                        <child>
+                          <object class="AdwActionRow" id="offline_install_label">
+                            <property name="title" translatable="true">Offline installation</property>
+                            <child>
+                              <object class="GtkButton" id="offline_install_button">
+                                <property name="valign">center</property>
+                                <property name="halign">center</property>
+                                <property name="icon-name">document-edit-symbolic</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
                         <style>
                           <class name="boxed-list"/>
                         </style>

@@ -65,6 +65,8 @@ class SummaryScreen(AxinstallScreen, Adw.Bin):
     office_uk_button = Gtk.Template.Child()
     entertainment_uk_label = Gtk.Template.Child()
     entertainment_uk_button = Gtk.Template.Child()
+    offline_install_label = Gtk.Template.Child()
+    offline_install_button = Gtk.Template.Child()
 
     added_locales = []
     # unakite_label = Gtk.Template.Child()
@@ -128,6 +130,9 @@ class SummaryScreen(AxinstallScreen, Adw.Bin):
             "clicked", self.window.show_page, self.window.misc_screen
         )
         self.entertainment_uk_button.connect(
+            "clicked", self.window.show_page, self.window.misc_screen
+        )
+        self.offline_install_button.connect(
             "clicked", self.window.show_page, self.window.misc_screen
         )
 
@@ -210,6 +215,11 @@ class SummaryScreen(AxinstallScreen, Adw.Bin):
             if self.window.misc_screen.entertainment_uk_enabled
             else "Entertainment user kit disabled"
         )
+        self.offline_install_label.set_title(
+            "Offline installation enabled"
+            if self.window.misc_screen.offline_install
+            else "Offline installation disabled"
+        )
 
         partitions = []
         for i in range(0, len(self.window.available_partitions)):
@@ -240,5 +250,6 @@ class SummaryScreen(AxinstallScreen, Adw.Bin):
             kernel=self.window.kernel_screen.chosen_kernel,
             partition_mode=self.window.partition_mode,
             partitions=partitions,
+            offline_install=self.window.misc_screen.offline_install,
         )
         print(self.installprefs.generate_json())
