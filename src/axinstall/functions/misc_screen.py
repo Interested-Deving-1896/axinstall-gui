@@ -34,7 +34,6 @@ class MiscScreen(AxinstallScreen, Adw.Bin):
     hacker_uk_switch = Gtk.Template.Child()
     office_uk_switch = Gtk.Template.Child()
     entertainment_uk_switch = Gtk.Template.Child()
-    offline_install_switch = Gtk.Template.Child()
 
     hostname = "axos"
     swap_value = 0
@@ -46,7 +45,6 @@ class MiscScreen(AxinstallScreen, Adw.Bin):
     office_uk_enabled = False
     entertainment_uk_enabled = False
     swap_filled = True
-    offline_install = False
 
     MIN_SWAP_MB = 256
     MAX_SWAP_MB = 32768
@@ -95,7 +93,6 @@ class MiscScreen(AxinstallScreen, Adw.Bin):
         self.hacker_uk_enabled = self.hacker_uk_switch.get_state()
         self.office_uk_enabled = self.office_uk_switch.get_state()
         self.entertainment_uk_enabled = self.entertainment_uk_switch.get_state()
-        self.offline_install = self.offline_install_switch.get_state()
 
     def verify_continue(self):
         self.set_valid(self.swap_filled)
